@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Tract — Pétition boulevard Dahdah</title>
+  <meta name="robots" content="noindex">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root { --ink: #14213d; --soft: #4a5672; --sea: #0a6e8a; --sun: #f4b63f; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #ddd; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); }
+    .page {
+      width: 210mm; height: 297mm; margin: 10mm auto; background: #fff;
+      padding: 14mm 17mm 12mm; display: flex; flex-direction: column; gap: 5mm;
+      box-shadow: 0 4px 30px rgba(0,0,0,.15); overflow: hidden;
+    }
+    @media print { body { background: #fff; } .page { margin: 0; box-shadow: none; } .noprint { display: none; } }
+    h1, h2 { font-family: "Iowan Old Style", Palatino, Georgia, serif; margin: 0; line-height: 1.1; }
+    .top { border-left: 3mm solid var(--sun); padding-left: 6mm; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 9pt; font-weight: 700; color: var(--sea); margin: 0 0 2mm; }
+    h1 { font-size: 30pt; }
+    h1 span { color: var(--sea); }
+    p { margin: 0; font-size: 11.5pt; line-height: 1.5; }
+    .intro { font-size: 12.5pt; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .box { border: .4mm solid #e6e1d8; border-radius: 4mm; padding: 5mm 6mm; }
+    .box h2 { font-size: 14pt; margin-bottom: 2mm; }
+    ul, ol { margin: 0; padding-left: 5mm; font-size: 11pt; line-height: 1.5; }
+    li { margin-bottom: 1mm; }
+    .schools { background: #fff4dc; border-color: #f1d9a3; }
+    .cta {
+      margin-top: auto; background: var(--ink); color: #fff; border-radius: 5mm;
+      padding: 7mm; display: grid; grid-template-columns: 52mm 1fr; gap: 8mm; align-items: center;
+    }
+    .qr { background: #fff; border-radius: 3mm; padding: 2mm; }
+    .qr img { width: 100%; display: block; }
+    .cta h2 { font-size: 22pt; color: var(--sun); margin-bottom: 3mm; }
+    .cta p { font-size: 11.5pt; }
+    .url { font-family: ui-monospace, Menlo, monospace; font-size: 11pt; margin-top: 3mm !important; color: #fff; word-break: break-all; }
+    .foot { font-size: 8.5pt; color: var(--soft); text-align: center; }
+    .noprint { text-align: center; padding: 6mm; font-size: 11pt; }
+  </style>
+</head>
+<body>
+  <div class="noprint">Aperçu du tract — <strong>Cmd/Ctrl + P</strong> → A4, marges « aucune », « graphiques d'arrière-plan » cochés.</div>
+
+  <div class="page">
+    <div class="top">
+      <p class="eyebrow">Pétition des riverains · Marseille 4<sup>e</sup></p>
+      <h1>Pour un boulevard Dahdah <span>propre</span>, toute l'année.</h1>
+    </div>
+
+    <p class="intro">Bonjour voisine, voisin ! Poubelles qui débordent, dépôts sauvages, déjections canines… Notre boulevard n'est aujourd'hui nettoyé que lorsqu'un riverain excédé passe des heures au téléphone avec les services. <strong>Ensemble, demandons un nettoyage régulier et programmé.</strong></p>
+
+    <div class="box schools">
+      <h2>🎒 Deux écoles sur notre boulevard</h2>
+      <p>L'École élémentaire Dahdah et l'École Sainte-Thérèse d'Avila accueillent chaque jour des centaines d'enfants. Ils méritent des trottoirs propres et sûrs sur le chemin de l'école.</p>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h2>Le constat</h2>
+        <ul>
+          <li>Conteneurs et sacs qui débordent</li>
+          <li>Encombrants et dépôts sauvages qui restent des jours</li>
+          <li>Déjections canines sur les trottoirs</li>
+          <li>Un nettoyage seulement « à la demande »</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Nous demandons</h2>
+        <ol>
+          <li>Un nettoyage mécanisé <strong>programmé</strong> et régulier</li>
+          <li>Une priorité aux <strong>abords des écoles</strong></li>
+          <li>L'enlèvement rapide des dépôts sauvages</li>
+          <li>Un interlocuteur identifié pour les riverains</li>
+        </ol>
+      </div>
+    </div>
+
+    <p>La pétition sera remise à la Mairie des 4<sup>e</sup> et 5<sup>e</sup> arrondissements, à la Ville de Marseille et à la Métropole Aix-Marseille-Provence. <strong>Plus nous serons nombreux, plus notre voix comptera.</strong> Chaque membre du foyer peut signer.</p>
+
+    <div class="cta">
+      <div class="qr"><img src="qr.svg" alt="QR code vers la pétition"></div>
+      <div>
+        <h2>Signez en 1 minute</h2>
+        <p>Scannez le QR code avec l'appareil photo de votre téléphone, ou rendez-vous sur :</p>
+        <p class="url" id="url">ssaunier.github.io/dahdah</p>
+        <p style="margin-top:3mm;font-size:10pt;opacity:.8">Pas de smartphone ? Signez sur la feuille papier auprès de la personne qui vous a remis ce tract.</p>
+      </div>
+    </div>
+
+    <p class="foot">Collectif des riverains du boulevard Dahdah · Vos données (prénom, nom, n° de rue) servent uniquement à cette pétition et ne sont jamais publiées. Ne pas jeter sur la voie publique 😉</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pétition — Un boulevard Dahdah propre (13004 Marseille)</title>
+  <meta name="description" content="Riverains du boulevard Dahdah (Marseille 4e) : signez la pétition pour un nettoyage régulier et systématique de notre rue.">
+  <meta property="og:title" content="Pétition — Un boulevard Dahdah propre">
+  <meta property="og:description" content="Pour un nettoyage régulier du boulevard Dahdah, 13004 Marseille. Signez en 1 minute.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧹</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__photo" aria-hidden="true">
+      <img src="img/boulevard.jpg" alt="" onerror="this.remove()">
+    </div>
+    <div class="hero__content">
+      <p class="eyebrow">Pétition des riverains · Marseille 4<sup>e</sup></p>
+      <h1>Pour un boulevard Dahdah <span class="hl">propre</span>, toute l'année.</h1>
+      <p class="lead">Poubelles qui débordent, dépôts sauvages, déjections canines… Aujourd'hui, notre rue n'est nettoyée que lorsqu'un riverain excédé passe des heures au téléphone. Nous demandons un passage <strong>régulier et programmé</strong> des engins de nettoyage.</p>
+      <div class="hero__cta">
+        <a href="#signer" class="btn btn--primary">Je signe la pétition</a>
+        <div class="counter" id="counter" hidden>
+          <strong id="count">0</strong>
+          <span>signatures</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section ecoles">
+      <div class="ecoles__box">
+        <div class="ecoles__icon">🎒</div>
+        <div>
+          <h2>Deux écoles sur notre boulevard</h2>
+          <p>L'<strong>École élémentaire Dahdah</strong> et l'<strong>École Sainte-Thérèse d'Avila</strong> accueillent chaque jour des centaines d'enfants. Matin et soir, familles, poussettes et écoliers empruntent des trottoirs encombrés et souillés. Leur sécurité et leur santé méritent une rue propre.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section constat">
+      <h2>Le constat</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card__icon">🗑️</div>
+          <h3>Poubelles &amp; sacs</h3>
+          <p>Conteneurs qui débordent, sacs éventrés sur le trottoir, déchets qui s'accumulent pendant des jours.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🛋️</div>
+          <h3>Dépôts sauvages</h3>
+          <p>Encombrants, gravats et cartons abandonnés qui restent en place bien trop longtemps.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🐕</div>
+          <h3>Déjections canines</h3>
+          <p>Trottoirs souillés, sur le chemin quotidien des écoliers, des poussettes et des personnes à mobilité réduite.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section demande">
+      <h2>Ce que nous demandons</h2>
+      <ol class="asks">
+        <li><strong>Un nettoyage programmé</strong> du boulevard Dahdah (balayage et lavage mécanisés) à fréquence régulière et connue des riverains.</li>
+        <li><strong>Une attention prioritaire aux abords des deux écoles</strong>, avec un nettoyage avant les heures d'entrée des élèves.</li>
+        <li><strong>Un enlèvement rapide des dépôts sauvages</strong> signalés, sans qu'il soit nécessaire de relancer les services à plusieurs reprises.</li>
+        <li><strong>Un interlocuteur identifié</strong> pour faire le point avec les riverains sur la propreté de la rue.</li>
+      </ol>
+      <p class="muted">Cette pétition sera remise à la Mairie des 4<sup>e</sup> et 5<sup>e</sup> arrondissements, à la Ville de Marseille et à la Métropole Aix-Marseille-Provence. Seul le <strong>nombre</strong> de signatures et la liste des numéros de rue concernés seront communiqués publiquement.</p>
+    </section>
+
+    <section class="section signer" id="signer">
+      <div class="signer__grid">
+        <div class="signer__intro">
+          <h2>Signer la pétition</h2>
+          <p>Une minute suffit. Plus nous sommes nombreux, plus notre demande a de poids.</p>
+          <div class="progress" id="progress" hidden>
+            <div class="progress__bar"><span id="progress-fill"></span></div>
+            <p><strong id="progress-count">0</strong> / <span id="progress-goal">200</span> signatures — objectif</p>
+          </div>
+          <p class="muted small">Une signature par personne. Chaque membre d'un foyer peut signer.</p>
+        </div>
+
+        <form id="petition-form" class="form" novalidate>
+          <div class="form__row">
+            <label>
+              <span>Prénom</span>
+              <input name="prenom" autocomplete="given-name" required maxlength="60">
+            </label>
+            <label>
+              <span>Nom</span>
+              <input name="nom" autocomplete="family-name" required maxlength="60">
+            </label>
+          </div>
+
+          <div class="form__row form__row--address">
+            <label class="numero">
+              <span>N°</span>
+              <input name="numero" inputmode="numeric" required maxlength="6" placeholder="12">
+            </label>
+            <label>
+              <span>Adresse</span>
+              <input value="boulevard Dahdah, 13004 Marseille" disabled>
+            </label>
+          </div>
+
+          <label>
+            <span>Vous êtes <em>(facultatif)</em></span>
+            <select name="profil">
+              <option value="">—</option>
+              <option>Habitant·e du boulevard</option>
+              <option>Commerçant·e / professionnel·le du boulevard</option>
+              <option>Habitant·e du quartier</option>
+            </select>
+          </label>
+
+          <!-- Anti-spam : champ invisible, doit rester vide -->
+          <label class="hp" aria-hidden="true">
+            Site web <input name="website" tabindex="-1" autocomplete="off">
+          </label>
+
+          <label class="consent">
+            <input type="checkbox" name="consentement" required>
+            <span>J'accepte que mes prénom, nom et numéro de rue soient enregistrés par le collectif des riverains du boulevard Dahdah afin de porter cette pétition auprès des pouvoirs publics. Ces données ne seront ni publiées, ni cédées, ni utilisées à d'autres fins. <a href="#rgpd">En savoir plus</a>.</span>
+          </label>
+
+          <p class="form__error" id="form-error" role="alert" hidden></p>
+
+          <button type="submit" class="btn btn--primary btn--block" id="submit-btn">Je signe</button>
+        </form>
+
+        <div class="thanks" id="thanks" hidden>
+          <div class="thanks__icon">✅</div>
+          <h3>Merci, <span id="thanks-name"></span> !</h3>
+          <p>Votre signature est bien enregistrée. Parlez-en à vos voisins : chaque signature compte.</p>
+          <button class="btn btn--ghost" id="share-btn" type="button">Partager la pétition</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section carte">
+      <h2>Le boulevard Dahdah</h2>
+      <p class="muted">Entre les Chutes-Lavie et les Chartreux, Marseille 4<sup>e</sup>.</p>
+      <div class="map">
+        <iframe
+          title="Carte du boulevard Dahdah"
+          loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=5.3895%2C43.3078%2C5.3995%2C43.3128&amp;layer=mapnik&amp;marker=43.31034%2C5.39457">
+        </iframe>
+      </div>
+      <p class="small muted">Carte © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributeurs OpenStreetMap</a></p>
+    </section>
+
+    <section class="section rgpd" id="rgpd">
+      <h2>Vos données personnelles</h2>
+      <dl>
+        <dt>Responsable</dt>
+        <dd>Le collectif des riverains du boulevard Dahdah — contact : <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></dd>
+        <dt>Finalité</dt>
+        <dd>Recueillir et comptabiliser les signatures de la pétition, et la remettre aux services publics compétents.</dd>
+        <dt>Base légale</dt>
+        <dd>Votre consentement (art. 6.1.a du RGPD), que vous pouvez retirer à tout moment.</dd>
+        <dt>Données</dt>
+        <dd>Prénom, nom, numéro dans le boulevard, profil (facultatif), date de signature. Aucune adresse e-mail, aucun cookie, aucun traceur.</dd>
+        <dt>Destinataires</dt>
+        <dd>Les membres du collectif et, lors de la remise de la pétition, les services de la Ville de Marseille et de la Métropole Aix-Marseille-Provence. Les données sont hébergées sur Google Sheets (Google Ireland Ltd).</dd>
+        <dt>Durée</dt>
+        <dd>Les données sont supprimées au plus tard 6 mois après la remise de la pétition.</dd>
+        <dt>Vos droits</dt>
+        <dd>Accès, rectification, suppression : écrivez-nous à l'adresse ci-dessus. Vous pouvez aussi saisir la <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">CNIL</a>.</dd>
+      </dl>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Collectif des riverains du boulevard Dahdah · 13004 Marseille</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

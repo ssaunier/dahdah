@@ -1,6 +1,6 @@
 """Génère tract/qr.svg pointant vers l'URL de la pétition.
 
-Usage : python3 scripts/qr.py https://ssaunier.github.io/dahdah/
+Usage : python3 scripts/qr.py https://dahdah.saunier.me/
 (nécessite : pip install segno)
 """
 import sys

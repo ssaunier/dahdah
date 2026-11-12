@@ -6,7 +6,7 @@
  */
 
 const SHEET_NAME = 'Signatures';
-const HEADERS = ['Date', 'Prénom', 'Nom', 'Numéro', 'Profil', 'Consentement', 'Source'];
+const HEADERS = ['Date', 'Prénom', 'Nom', 'Profil', 'N° bd Dahdah', 'Adresse (quartier)', 'Consentement', 'Source'];
 
 function getSheet_() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -54,21 +54,22 @@ function doPost(e) {
     const nom = clean_(p.nom, 60);
     const numero = clean_(p.numero, 10);
     const profil = clean_(p.profil, 80);
+    const adresse = clean_(p.adresse, 160);
 
-    if (!prenom || !nom || !numero) return json_({ ok: false, error: 'Champs manquants.' });
+    if (!prenom || !nom || !(numero || adresse)) return json_({ ok: false, error: 'Champs manquants.' });
     if (p.consentement !== true) return json_({ ok: false, error: 'Le consentement est requis.' });
 
-    // Doublon (même prénom + nom + numéro)
-    const key = [prenom, nom, numero].join('|').toLowerCase();
+    // Doublon (même prénom + nom + adresse)
+    const key = [prenom, nom, numero, adresse].join('|').toLowerCase();
     const rows = sheet.getLastRow() > 1
-      ? sheet.getRange(2, 2, sheet.getLastRow() - 1, 3).getValues()
+      ? sheet.getRange(2, 2, sheet.getLastRow() - 1, 5).getValues()
       : [];
-    const duplicate = rows.some(r => r.join('|').toLowerCase() === key);
+    const duplicate = rows.some(r => [r[0], r[1], r[3], r[4]].join('|').toLowerCase() === key);
     if (duplicate) {
       return json_({ ok: false, error: 'Vous avez déjà signé cette pétition. Merci !' });
     }
 
-    sheet.appendRow([new Date(), prenom, nom, numero, profil, 'oui', 'web']);
+    sheet.appendRow([new Date(), prenom, nom, profil, numero, adresse, 'oui', 'web']);
     return json_({ ok: true, count: count_(sheet) });
   } catch (err) {
     return json_({ ok: false, error: 'Erreur serveur.' });

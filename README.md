@@ -36,7 +36,7 @@ Déposer une photo `img/boulevard.jpg` (paysage, ~1600px de large). Sans photo, 
 
 ```bash
 pip install segno
-python3 scripts/qr.py https://ssaunier.github.io/dahdah/   # ou le futur domaine
+python3 scripts/qr.py https://dahdah.saunier.me/
 ```
 
 Ouvrir `tract/index.html` dans Chrome → Imprimer → A4, marges *Aucune*, *Graphiques d'arrière-plan* coché.

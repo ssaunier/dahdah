@@ -145,6 +145,29 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .form__error { color: var(--danger); font-size: .9rem; margin: 0; }
 .hp { position: absolute; left: -9999px; }
 
+.profil { border: 0; padding: 0; margin: 0; }
+.profil legend { font-size: .85rem; font-weight: 600; margin-bottom: .4rem; padding: 0; }
+.segmented { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+.segmented label { position: relative; }
+.segmented input { position: absolute; opacity: 0; }
+.segmented span {
+  display: flex !important; align-items: center; justify-content: center; text-align: center;
+  height: 100%; min-height: 3.2rem; padding: .5rem; margin: 0 !important;
+  border: 1.5px solid var(--line); border-radius: 10px; cursor: pointer;
+  font-size: .85rem !important; font-weight: 600; line-height: 1.25; color: var(--ink-soft);
+}
+.segmented input:checked + span { border-color: var(--sea); background: rgba(10,110,138,.08); color: var(--sea-dark); }
+.segmented input:focus-visible + span { box-shadow: 0 0 0 3px rgba(10,110,138,.25); }
+
+.autocomplete { position: relative; }
+.autocomplete__list {
+  position: absolute; z-index: 10; left: 0; right: 0; top: 100%; margin: .25rem 0 0; padding: .3rem;
+  list-style: none; background: #fff; border: 1.5px solid var(--line); border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(20,33,61,.15);
+}
+.autocomplete__list li { padding: .6rem .7rem; border-radius: 7px; cursor: pointer; font-size: .95rem; }
+.autocomplete__list li[aria-selected=true], .autocomplete__list li:hover { background: rgba(10,110,138,.08); }
+
 .thanks { text-align: center; justify-items: center; }
 .thanks__icon { font-size: 3rem; }
 
@@ -163,6 +186,8 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
   .hero { min-height: 92vh; }
   .signer__grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .form__row { grid-template-columns: 1fr; }
+  .segmented { grid-template-columns: 1fr; }
+  .segmented span { min-height: 2.8rem; }
   .form__row--address { grid-template-columns: 5rem 1fr; }
   .rgpd dl { grid-template-columns: 1fr; }
   .rgpd dt { margin-top: .6rem; }

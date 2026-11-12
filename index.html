@@ -9,7 +9,7 @@
   <meta property="og:description" content="Pour un nettoyage régulier du boulevard Dahdah, 13004 Marseille. Signez en 1 minute.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧹</text></svg>">
-  <link rel="stylesheet" href="style.css?v=202611121923">
+  <link rel="stylesheet" href="style.css?v=202611122135">
 </head>
 <body>
 
@@ -108,21 +108,10 @@
             </div>
           </fieldset>
 
-          <div class="form__row form__row--address" id="addr-bd">
-            <label class="numero">
-              <span>N°</span>
-              <input name="numero" inputmode="numeric" maxlength="8" placeholder="12">
-            </label>
+          <div class="autocomplete">
             <label>
               <span>Adresse</span>
-              <input value="boulevard Dahdah, 13004 Marseille" disabled>
-            </label>
-          </div>
-
-          <div class="autocomplete" id="addr-quartier" hidden>
-            <label>
-              <span>Votre adresse</span>
-              <input name="adresse" id="adresse" autocomplete="off" maxlength="160" placeholder="Ex : 12 avenue des Chartreux" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="adresse-list">
+              <input name="adresse" id="adresse" autocomplete="off" maxlength="160" placeholder="Ex : 17 boulevard Dahdah" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="adresse-list">
             </label>
             <ul class="autocomplete__list" id="adresse-list" role="listbox" hidden></ul>
           </div>
@@ -174,7 +163,7 @@
         <dt>Base légale</dt>
         <dd>Votre consentement (art. 6.1.a du RGPD), que vous pouvez retirer à tout moment.</dd>
         <dt>Données</dt>
-        <dd>Prénom, nom, adresse (numéro dans le boulevard ou adresse dans le quartier), profil, date de signature. Aucune adresse e-mail, aucun cookie, aucun traceur. Les suggestions d'adresse sont fournies par le service public <a href="https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage" target="_blank" rel="noopener">Géoplateforme (IGN)</a>, qui reçoit uniquement le texte saisi dans ce champ.</dd>
+        <dd>Prénom, nom, adresse, profil, date de signature. Aucune adresse e-mail, aucun cookie, aucun traceur. Les suggestions d'adresse sont fournies par le service public <a href="https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage" target="_blank" rel="noopener">Géoplateforme (IGN)</a>, qui reçoit uniquement le texte saisi dans ce champ.</dd>
         <dt>Destinataires</dt>
         <dd>Les membres du collectif et, lors de la remise de la pétition, les services de la Ville de Marseille et de la Métropole Aix-Marseille-Provence. Les données sont hébergées sur Google Sheets (Google Ireland Ltd).</dd>
         <dt>Durée</dt>
@@ -190,7 +179,7 @@
     <p>Collectif des riverains du boulevard Dahdah · 13004 Marseille</p>
   </footer>
 
-  <script src="config.js?v=202611121923"></script>
-  <script src="app.js?v=202611121923"></script>
+  <script src="config.js?v=202611122135"></script>
+  <script src="app.js?v=202611122135"></script>
 </body>
 </html>

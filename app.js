@@ -31,18 +31,6 @@
     errorEl.hidden = false;
   }
 
-  // --- Profil : boulevard (n°) ou quartier (adresse complète) ---
-  const addrBd = document.getElementById("addr-bd");
-  const addrQuartier = document.getElementById("addr-quartier");
-  const isQuartier = () => form.profil.value === "Habitant(e) du quartier";
-  form.querySelectorAll('input[name="profil"]').forEach((r) =>
-    r.addEventListener("change", () => {
-      addrBd.hidden = isQuartier();
-      addrQuartier.hidden = !isQuartier();
-      (isQuartier() ? form.adresse : form.numero).focus();
-    })
-  );
-
   // --- Autocomplétion d'adresse : Géoplateforme IGN (ex-API Adresse / BAN) ---
   const input = document.getElementById("adresse");
   const list = document.getElementById("adresse-list");
@@ -82,7 +70,9 @@
   async function search(q) {
     controller?.abort();
     controller = new AbortController();
-    const query = /marseille|130\d\d/i.test(q) ? q : q + " Marseille";
+    // "17" ou "17 bis" seul -> on cherche sur le boulevard Dahdah
+    let query = /^\d{1,4}\s?(bis|ter|[a-z])?$/i.test(q) ? q + " boulevard Dahdah" : q;
+    if (!/marseille|130\d\d/i.test(query)) query += " Marseille";
     const url =
       "https://data.geopf.fr/geocodage/search?index=address&autocomplete=1&limit=8" +
       "&lat=43.3103&lon=5.3946&q=" + encodeURIComponent(query);
@@ -104,7 +94,7 @@
   input.addEventListener("input", () => {
     clearTimeout(timer);
     const q = input.value.trim();
-    if (q.length < 3) return close();
+    if (q.length < 1 || (q.length < 3 && !/^\d/.test(q))) return close();
     timer = setTimeout(() => search(q), 200);
   });
   input.addEventListener("keydown", (e) => {
@@ -126,19 +116,12 @@
     const data = Object.fromEntries(new FormData(form));
     data.prenom = (data.prenom || "").trim();
     data.nom = (data.nom || "").trim();
-    data.numero = (data.numero || "").trim();
     data.adresse = (data.adresse || "").trim();
     data.consentement = form.consentement.checked;
 
     if (!data.prenom || !data.nom) return fail("Merci d'indiquer votre prénom et votre nom.");
-    if (isQuartier()) {
-      data.numero = "";
-      if (data.adresse.length < 5) return fail("Merci d'indiquer votre adresse.");
-    } else {
-      data.adresse = "";
-      if (!/^\d{1,4}\s?(bis|ter|[a-z])?$/i.test(data.numero))
-        return fail("Merci d'indiquer votre numéro dans le boulevard (ex : 12, 12 bis).");
-    }
+    if (data.adresse.length < 5)
+      return fail("Merci d'indiquer votre adresse (ex : 17 boulevard Dahdah).");
     if (!data.consentement)
       return fail("Merci de cocher la case de consentement pour que votre signature soit prise en compte.");
 

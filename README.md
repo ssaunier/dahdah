@@ -27,16 +27,12 @@ Les signatures papier peuvent être saisies à la main dans la feuille (colonne 
 
 ⚠️ Après toute modification de `Code.gs` : *Déployer → Gérer les déploiements → Modifier → Nouvelle version* (sinon l'ancienne version reste en ligne).
 
-## 2. Remplacer les placeholders
-
-- `CONTACT_EMAIL` dans `index.html` et `tract/signatures.html` (obligatoire RGPD : droit d'accès/suppression).
-
-## 3. Photo
+## 2. Photo
 
 Déposer une photo `img/boulevard.jpg` (paysage, ~1600px de large). Sans photo, un dégradé est affiché.
 Éviter les captures Street View (droits Google) : une vraie photo de la rue est plus forte et libre de droits. Floutez visages et plaques.
 
-## 4. Tract & QR code
+## 3. Tract & QR code
 
 ```bash
 pip install segno
@@ -46,7 +42,7 @@ python3 scripts/qr.py https://ssaunier.github.io/dahdah/   # ou le futur domaine
 Ouvrir `tract/index.html` dans Chrome → Imprimer → A4, marges *Aucune*, *Graphiques d'arrière-plan* coché.
 Penser à mettre à jour l'URL affichée sous le QR code dans `tract/index.html` si le domaine change.
 
-## 5. Publier
+## 4. Publier
 
 Settings → Pages → Deploy from branch → `main` / root.
 

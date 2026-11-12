@@ -34,7 +34,7 @@
   // --- Profil : boulevard (n°) ou quartier (adresse complète) ---
   const addrBd = document.getElementById("addr-bd");
   const addrQuartier = document.getElementById("addr-quartier");
-  const isQuartier = () => form.profil.value === "Habitant·e du quartier";
+  const isQuartier = () => form.profil.value === "Habitant(e) du quartier";
   form.querySelectorAll('input[name="profil"]').forEach((r) =>
     r.addEventListener("change", () => {
       addrBd.hidden = isQuartier();

@@ -61,7 +61,7 @@
     list.innerHTML = "";
     items.forEach((label, i) => {
       const li = document.createElement("li");
-      li.role = "option";
+      li.setAttribute("role", "option");
       li.textContent = label;
       li.setAttribute("aria-selected", i === active);
       li.addEventListener("mousedown", (e) => {
